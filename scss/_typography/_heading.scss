@@ -1,0 +1,14 @@
+@use "../_abstract/variables" as *;
+@use "../_abstract/mixins" as *;
+
+.primary-heading {
+  font-size: 5.2rem;
+  font-weight: $fw-bold;
+  line-height: 1;
+  color: $primary-magenta;
+
+  @include breakpoint {
+    font-size: 3.7rem;
+    text-align: center;
+  }
+}

@@ -1,0 +1,14 @@
+@use "../_abstract/variables" as *;
+@use "../_abstract/mixins" as *;
+
+.primary-text {
+  font-size: 1.7rem;
+  font-weight: $fw-medium;
+  color: $natural-dark-magenta;
+  line-height: 2.5rem;
+
+  @include breakpoint {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+}

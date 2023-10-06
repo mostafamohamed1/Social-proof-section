@@ -1,0 +1,64 @@
+@use "../_abstract/mixins" as *;
+
+main {
+  --mt: 11.9rem;
+  --width: 111rem;
+  flex: 0 0 var(--width);
+  max-width: var(--width);
+
+  margin-block-start: var(--mt);
+  margin-inline: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  @include breakpoint {
+    --mt: 8rem;
+  }
+}
+
+.section-1 {
+  display: flex;
+
+  @include breakpoint {
+    flex-direction: column;
+  }
+
+  & > *:not(.sr-only) {
+    flex: 0 0 calc(var(--width) / 2);
+
+    @include breakpoint {
+      flex: 1 1 100%;
+    }
+  }
+
+  & .hero h2 {
+    max-width: 33.3rem;
+  }
+
+  & .hero p {
+    margin-block-start: 2.4rem;
+    max-width: 41.5rem;
+  }
+
+  .review {
+    padding-block-start: 2.6rem;
+    padding-inline-start: 1.5rem;
+
+    @include breakpoint {
+      padding-inline-start: 0;
+    }
+  }
+}
+
+.section-2 {
+  width: 100%;
+  margin-block-start: 7.3rem;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,60 @@
+@use "../_abstract/variables" as *;
+@use "../_abstract/mixins" as *;
+
+.review-rate {
+  --size: 4.8rem;
+
+  padding-block: 2rem;
+  padding-inline: 3.2rem 0;
+  display: flex;
+  align-items: center;
+  background-color: $natural-light-magenta;
+  border-radius: 0.7rem;
+  max-width: 44.4rem;
+
+  @include breakpoint {
+    padding-block: 1.6rem;
+    padding-inline: 0;
+    flex-direction: column;
+  }
+
+  &:nth-child(2) {
+    margin-inline-start: var(--size);
+  }
+
+  &:nth-child(3) {
+    margin-inline-start: calc(var(--size) * 2);
+  }
+
+  @include breakpoint {
+    &:nth-child(2),
+    &:nth-child(3) {
+      margin-inline-start: 0;
+    }
+  }
+
+  & > div:first-child {
+    padding-inline-end: 3.2rem;
+
+    & img {
+      margin-inline-end: 0.6rem;
+    }
+    @include breakpoint {
+      margin-block-end: 1.5rem;
+      padding-inline-end: 0;
+    }
+  }
+
+  & > div:last-child {
+    font-size: 1.7rem;
+    font-weight: $fw-medium;
+
+    & p {
+      color: $primary-magenta;
+    }
+  }
+}
+
+.review-rate:not(:last-child) {
+  margin-block-end: 1.6rem;
+}
