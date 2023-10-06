@@ -2,12 +2,22 @@
 @use "../_abstract/mixins" as *;
 
 .customer {
+  --mt: 1.6rem;
   padding-inline: 3.3rem;
   padding-block: 4rem 3rem;
   max-width: 35rem;
+  height: 24.8rem;
 
   background-color: $primary-magenta;
   border-radius: 0.7rem;
+
+  &:nth-child(2) {
+    margin-top: var(--mt);
+  }
+
+  &:nth-child(3) {
+    margin-top: calc(var(--mt) * 2);
+  }
 
   @include breakpoint {
     margin-block-end: 2rem;
